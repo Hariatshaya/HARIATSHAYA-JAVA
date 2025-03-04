@@ -1,0 +1,129 @@
+PROBLEM 1
+import java.util.HashSet;
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        int[][] a = {{9, 9, 9}, {5, 5, 5}, {9,9,9}};
+        
+        
+        HashSet<Integer> n = new HashSet<>();
+      
+        for (int[] row : a) {
+            for (int num : row) {
+                n.add(num);
+            }
+        }
+
+        
+        Integer[] arr = n.toArray(new Integer[0]);
+        Arrays.sort(arr, (x, y) -> y - x);
+
+    
+        if (arr.length >= 3) {
+            System.out.println("The third maximum is " + arr[2]);
+        } else {
+            System.out.println("No third maximum");
+        }
+    }
+}
+
+PROBLEM 2
+public class Main {
+    public static void main(String[] args) {
+        int[][] a = {{5, 4, 7}, {1, 8, 3}, {9, 6, 2}};
+        
+        int row = a.length;
+        int col = a[0].length;
+
+        int[] n = new int[row * col];
+        int index = 0;
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                n[index++] = a[i][j];
+            }
+        }
+
+        
+        for (int i = 0; i <n.length - 1; i++) {
+            for (int j = 0; j < n.length- 1 - i; j++) {
+                if (n[j] >n[j + 1]) {
+                    
+                    int temp = n[j];
+                    n[j]=n[j + 1];
+                    n[j + 1] = temp;
+                }
+            }
+        }
+
+        index = 0;
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                a[i][j] =n[index++];
+            }
+        }
+
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                System.out.print(a[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+PROBLEM 3
+public class Main {
+    public static void main(String[] args) {
+        int[][] a = {{5, 4, 7}, {1, 8, 3}, {9, 6, 2}};
+        
+        int row = a.length;
+        int col = a[0].length;
+        for (int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+                if(a[i][j]==1){
+                    a[i][j]=4;
+                }
+                if(a[i][j]==9){
+                    a[i][j]=7;
+                }
+                if(a[i][j]==6){
+                    a[i][j]=3;
+                }
+                System.out.print(a[i][j]+" ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+PROBLEM 4
+public class Main {
+    public static void main(String[] args) {
+        int[][] a = {{5, 4, 7}, {1, 8, 3}, {9, 6, 2}};
+        
+        int row = a.length;
+        int col = a[0].length;
+        int count=0;
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                int num = a[i][j];
+                int sum = 0;
+            for(int k=1;k<=num/2;k++){
+                if(num%k==0){
+                    sum=sum+k;
+                }
+            }
+            if(sum>num){
+                count++;
+            }
+            }
+    }
+    if(count%2==0){
+        System.out.println("yes");
+    }
+    else{
+        System.out.println("no");
+    }
+}
+}
