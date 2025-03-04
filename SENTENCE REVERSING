@@ -1,0 +1,15 @@
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+     Scanner sc=new Scanner(System.in);
+     System.out.println("Enter a sentence: ");
+     String a=sc.nextLine();
+     String[] words=a.split("\\s+");
+     StringBuilder rev=new StringBuilder();
+     for(int i=words.length-1;i>=0;i--){
+         rev.append(words[i]).append(" ");
+     }
+     System.out.println("reversed sentence: "+ rev.toString().trim());
+     sc.close();
+    }
+}
