@@ -1,0 +1,32 @@
+FROM A STRINGBUFFER
+public class Main {
+    public static void main(String[] args) {
+        StringBuffer a= new StringBuffer("hariatshaya");
+        String substring = a.substring(0,4);
+        System.out.println("extracted string: "+substring);
+    }
+}
+
+FROM A STRINGBUILDER
+
+
+
+public class Main {
+    public static void main(String[] args) {
+        StringBuilder a= new StringBuilder("hariatshaya");
+        String substring = a.substring(0,4);
+        System.out.println("extracted string: "+substring);
+    }
+}
+
+FROM STRING OBJECT
+
+
+
+public class Main {
+    public static void main(String[] args) {
+        String a="HARIATSHAYA";
+        String substring = a.substring(0,4);
+        System.out.println("extracted string: "+substring);
+    }
+}
