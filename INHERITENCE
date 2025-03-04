@@ -1,0 +1,34 @@
+class Shape {
+    double length, breadth;
+
+    
+    Shape(double length, double breadth) {
+        this.length = length;
+        this.breadth = breadth;
+        System.out.println("Rectangle");
+    }
+}
+
+class Rectangle extends Shape {
+    
+    
+    Rectangle(double length, double breadth) {
+        super(length, breadth);  
+    }
+
+
+    void area() {
+        double a = this.length * this.breadth;
+        System.out.println("Area is: " + a);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Rectangle r = new Rectangle(12.0, 21.0);
+        
+        r.area();
+    }
+}
+
